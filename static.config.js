@@ -1,6 +1,28 @@
 import axios from 'axios'
 import path from 'path'
+import fs from 'fs'
 // import { Post } from './types'
+
+const loadTabs = () => {
+  try{
+    console.log('loading tabs')
+    const tabFiles = fs.readdirSync('./tabs').filter(file => file.endsWith('.md'))
+    console.log(`got ${tabFiles.length} files`)
+    const tabs = tabFiles.map(tabFile => {
+      console.log(`loading ${tabFile}`)
+      const tabData = fs.readFileSync(path.join('./tabs', tabFile), 'utf8').toString();
+      console.log(`got ${tabData.length} chars`)
+      return {[tabFile]: tabData}
+    })
+    .reduce((acc, tabFileData) => ({...acc, ...tabFileData}), {})
+    console.log(tabs)
+    return tabs;
+  }
+  catch(error){
+    console.error(error)
+    return {};
+  }
+}
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
 
