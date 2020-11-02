@@ -7,9 +7,9 @@ export default () => {
 
   return (
     <div>
-      <h1>It's blog time.</h1>
+      <h1>My tabs collection</h1>
       <br />
-      All Posts:
+      All tabs:
       <ul>
         {tabs.map(tab => (
           <li key={tab}>

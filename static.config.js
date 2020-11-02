@@ -1,7 +1,6 @@
 import axios from 'axios'
 import path from 'path'
 import fs from 'fs'
-// import { Post } from './types'
 
 const loadTabs = () => {
   try{
@@ -34,19 +33,6 @@ export default {
     )
     const tabs = loadTabs();
     return [
-      {
-        path: '/blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map((post /* : Post */) => ({
-          path: `/post/${post.id}`,
-          template: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
-      },
       {
         path: '/tabs',
         getData: () => ({ tabs: Object.keys(tabs) }),

@@ -1,15 +1,15 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from '@reach/router'
+import ReactMarkdown from 'react-markdown'
 
 export default () => {
-  const { fileName, data }: { fileName: string, data: string } = useRouteData()
+  const { data }: { fileName: string, data: string } = useRouteData()
   return (
     <div>
-      <Link to="/blog/">{'<'} Back</Link>
+      <Link to="/tabs/">{'<'} Back</Link>
       <br />
-      <h3>{fileName}</h3>
-      <p>{data}</p>
+      <ReactMarkdown>{data}</ReactMarkdown>
     </div>
   )
 }
