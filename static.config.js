@@ -15,7 +15,7 @@ const loadTabs = () => {
       return {[tabFile]: tabData}
     })
     .reduce((acc, tabFileData) => ({...acc, ...tabFileData}), {})
-    console.log(tabs)
+    // console.log(tabs)
     return tabs;
   }
   catch(error){
@@ -32,6 +32,7 @@ export default {
     const { data: posts } /* :{ data: Post[] } */ = await axios.get(
       'https://jsonplaceholder.typicode.com/posts'
     )
+    const tabs = loadTabs();
     return [
       {
         path: '/blog',
@@ -46,6 +47,20 @@ export default {
           }),
         })),
       },
+      {
+        path: '/tabs',
+        getData: () => ({ tabs: Object.keys(tabs) }),
+        children: Object.keys(tabs).map(
+          fileName => ({
+            path: `/${fileName}`,
+            template: 'src/containers/Tab',
+            getData: () => ({
+              fileName,
+              data: tabs[fileName]
+            })
+          })
+        )
+      }
     ]
   },
   plugins: [
