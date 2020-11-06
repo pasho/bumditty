@@ -1,11 +1,17 @@
 # Those were the days
 ## Clawhammer Banjo Simple Arrangement
 Tuning: f#DGBD
-```banjo;tuning:f#DGBd
+
+:::vextab
+options tab-stems=true tab-stem-direction=down scale=0.75 width=1200 space=60
+
+tabstave notation=true time=4/4 tuning=D/5,B/4,G/4,D/4,F#/5
+
 notes :8 0/2-0/2 $.top.II, $ 2h3/2 2p0/1 2p0/2 |
 notes :8 0/1-0/2 $.top.Bm, $ (0/1.0/2.4/3.4/4)-0/5 :q 0/2 :8 (0/1.0/2.4/3.4/4)-0/5 |
 notes :8 4/4-4/4 0h2/3 0/2-2/3 0/3-4/4 | 
 notes :q 2/4 $.top.Em$ :8 (2/1.0/2.0/3.2/4)-0/5 :q 2/4 :8 (2/1.0/2.0/3.2/4)-0/5 |
+:::
 
 notes :8 0/2-0/2 2h3/2 2p0/1 2p0/2 |
 notes :8 0/1-0/2 $.top.Bm, $ (0/1.0/2.4/3.4/4)-0/5 :q 0/2 :8 (0/1.0/2.4/3.4/4)-0/5 |
@@ -22,4 +28,3 @@ notes :q 2/3 :8 0/3-0/3 ## 0/3 2h4/3 |
 notes :q 2/1 :8 0/1-0/1 ## 0/2 2h3/2 |
 notes :qd 4/1 :8 2/1 : 8d 0/1-:16:2/2 :8 0/2-3/3 |
 notes :q 0/2 $.top.Bm$ :8 (0/1.0/2.4/3.4/4)-0/5 :q 0/2 :8 (0/1.0/2.4/3.4/4)-0/5 =|=
-```
